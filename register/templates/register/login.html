@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title%}Signup{% endblock title%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<section class="banner-area relative" id="home">	
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row fullscreen d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-5" style="margin-top: 100px;background-color: #b8b5ff ;border-radius: 30px">
+                <h3 class="text-white">
+                    <span>Welcome</span> Sign In			
+                </h3>	
+                <form method="POST" class='form-group' style="text-align: left;">
+                    {% csrf_token %} {{ form | crispy}}
+                    <button type="submit" class="btn btn-success" style="margin-left: 180px">Sign In</button>
+                </form>
+            </div>											
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
